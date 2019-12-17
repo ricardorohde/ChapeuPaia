@@ -1,0 +1,2024 @@
+@font-face{
+    font-family: 'PT Sans';
+    src:url('../fonts/PT_Sans/PT_Sans-Web-Regular.ttf');    
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    /*overflow-x: hidden;*/
+
+}
+*::selection{
+    background: #ccc;
+    color: white;
+}
+::-webkit-scrollbar{
+    width: 8px;
+    background-color: white;
+}
+::-webkit-scrollbar-thumb{
+    background-color: lightblue;
+    box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+}
+#BoxGeral{
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+.imgPerfil{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+#BoxInicial{
+    min-height: 100vh;
+    background: url('../img/background1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 0;
+
+}
+
+.Save{
+    background: none;
+    color: green;
+}
+.Save:hover{
+    background: green;
+    color: white;
+    transition: all .4s;
+}
+#Edit{
+    background: none;
+    color: green;
+}
+#Edit:hover{
+    background: green;
+    color: white;
+    transition: all .4s;
+}
+#Cancel:hover{
+    background: red;
+    color: white;
+    transition: all .4s;
+
+}
+#Cancel{
+    background: none;
+    color: red;
+}
+#BoxArticle{
+    min-height: 100px;
+    width: 100%;
+    padding: 0;
+}
+.MenuAdd{
+    background: firebrick;
+    border-bottom: 2px solid darkred;
+    transition: cubic-bezier(1, -2.43, 0, -0.10) .4s;
+}
+#iconMenu{
+    outline: none;
+    height:48px;
+    width: 48px;
+    position: relative;
+    border-radius: 50%;
+    float: left;
+}
+
+#check{
+    position: absolute;
+    display: none;
+
+}
+#mySpan{
+    width: 25px;
+    height: 2px;
+    position: absolute;
+    top: 22px;
+    left: 11px;
+    background-color: #fff;
+    transition: all .3s ease-in-out;
+}
+#mySpan:before{
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 2px;
+    bottom: -8px;
+    background-color: #fff;
+    transition: all .3s ease-in-out;
+}
+#mySpan:after{
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 2px;
+    bottom: 8px;
+    background-color: #fff;
+    transition: all .3s ease-in-out;
+}
+#iconMenu{
+    position: absolute;
+    left: 50%;
+    top: 35px;
+    transform: translate(-50%,-50%);
+}
+#iconMenu label{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    background: none;
+    border-radius: 50%;
+    transition:all .5s cubic-bezier(1,-0.21, 0.35, 0.99);
+    cursor: pointer;
+}
+#check:checked ~ label #mySpan{
+    transform: rotate(45deg);
+}
+#check:checked ~ #Menu{
+    background: firebrick;
+}
+#check:checked ~ label #mySpan:before{
+    transform: rotate(90deg);
+    top:0;
+
+}
+
+#check:checked ~ label #mySpan:after{
+    transform: rotate(90deg);
+    top:0;
+}
+#check:checked ~label{
+    z-index: 1;
+}
+
+
+#BoxTittleLogo{
+    min-width: 200px;
+    width: 100%;
+    margin: 0 auto;
+    /*border:1px solid #fff;*/
+}
+#BoxTittle{
+    min-width: 150px;
+    /*border:1px solid #fff;*/
+    padding: 5px;
+}
+#BoxLogo{
+    /*border:1px solid #fff;*/
+    padding: 0;
+    padding-top: 70px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 350px;
+    max-height: 250px;
+}
+#BoxLogo img{
+    width: 100%;
+    height: 100%;
+}
+#Logo{
+    /*border:1px solid #000;*/
+    width: 30%;
+    height: 60%;
+    margin-left: 35%;
+    margin-top: 50px;
+    padding: 0;
+
+}
+
+
+#abrindoNav ul li{
+    margin-left: 10px;
+    position: relative;
+    z-index: 3;
+}
+
+#MenuLogo{
+    margin-left: 10px;
+}
+
+#BoxCarrinho{
+    position: absolute;
+    height: 35px;
+    width: 40px;
+    float: right;
+    padding: 3px;
+    top: 32px;
+    left: 73%;
+    transform: translate(-50%,-50%);
+    cursor: pointer;
+
+}
+#BoxNotification{
+    position: absolute;
+    height: 35px;
+    width: 40px;
+    float: right;
+    padding: 3px;
+    top: 32px;
+    left: 57%;
+    transform: translate(-50%,-50%);
+    cursor: pointer;
+
+}
+#BoxNotification img{
+    width: 30px;
+    height: 30px;
+}
+#BoxSair{
+    position: absolute;
+    height: 35px;
+    width: 40px;
+    float: right;
+    padding: 3px;
+    top: 22px;
+    left: 79%;
+    transform: translate(-50%,-50%);
+
+}
+#BoxItens{
+    background: lightblue;
+    position: absolute;
+    top: 80%;
+    left: 80%;
+    max-width: 24px;
+    height: 24px;
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-bottom: 3px;
+}
+#Itens{
+    background: none;
+    border:none;
+    color:black;
+    font-size: 16px;
+    width: 30px;
+    font-weight: bold;
+    padding: 0;
+}
+#Mensages{
+    background: none;
+    border:none;
+    color:black;
+    font-size: 16px;
+    width: 30px;
+    font-weight: bold;
+    padding: 0;
+}
+.nav {
+    left:50%;
+    margin-left:-150px;
+    top:50px;
+    position:absolute;
+}
+.nav>li>a:hover, .nav>li>a:focus, .nav .open>a, .nav .open>a:hover, .nav .open>a:focus {
+    background:#fff;
+}
+.dropdown {
+    background:#fff;
+    border-radius:4px;
+}
+.dropdown-menu>li>a {
+    color:#428bca;
+}
+.dropdown ul.dropdown-menu {
+    border-radius:4px;
+    box-shadow:none;
+    margin-top:20px;
+    width:300px;
+}
+.dropdown ul.dropdown-menu:before {
+    content: "";
+    border-bottom: 10px solid #fff;
+    border-right: 10px solid transparent;
+    border-left: 10px solid transparent;
+    position: absolute;
+    top: -10px;
+    right: 16px;
+    z-index: 10;
+}
+.dropdown ul.dropdown-menu:after {
+    content: "";
+    border-bottom: 12px solid #ccc;
+    border-right: 12px solid transparent;
+    border-left: 12px solid transparent;
+    position: absolute;
+    top: -12px;
+    right: 14px;
+    z-index: 9;
+    width: 300px;
+}.nav {
+    left:50%;
+    margin-left:-150px;
+    top:50px;
+    position:absolute;
+}
+.nav>li>a:hover, .nav>li>a:focus, .nav .open>a, .nav .open>a:hover, .nav .open>a:focus {
+    background:#fff;
+}
+.dropdown {
+    background:#fff;
+    border-radius:4px;
+}
+.dropdown-menu>li>a {
+    color:#428bca;
+}
+.dropdown ul.dropdown-menu {
+    border-radius:4px;
+    box-shadow:none;
+    margin-top:20px;
+    width:300px;
+}
+.dropdown ul.dropdown-menu:before {
+    content: "";
+    border-bottom: 10px solid #fff;
+    border-right: 10px solid transparent;
+    border-left: 10px solid transparent;
+    position: absolute;
+    top: -10px;
+    right: 16px;
+    z-index: 10;
+}
+.dropdown ul.dropdown-menu:after {
+    content: "";
+    border-bottom: 12px solid #ccc;
+    border-right: 12px solid transparent;
+    border-left: 12px solid transparent;
+    position: absolute;
+    top: -12px;
+    right: 14px;
+    z-index: 9;
+}
+.row-center{
+    margin: 0 auto;
+}
+.text-lanche{
+    color: white;
+    font-size: 19px;
+    font-weight: bold;
+
+}
+.text-lanche-preco{
+    font-size: 20px;
+    font-weight: bold;
+    position: absolute;
+    top: 10%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    color:#00cc00;
+}
+#MyClose{
+    outline: none;
+    color:black;
+}
+/* upload do perfil */
+#LabelUpload{
+
+    width: 110px;
+    height: 110px;
+    border-radius: 50%; 
+    position: relative;
+    cursor: pointer;
+
+
+}
+#LabelUpload img{
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+}
+#BoxUploadImage{
+
+    min-height: 63px;
+    margin-top: 0;
+}
+#UploadImage{
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+
+}
+.BallStausPerfil{
+    background: #00FF00	;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    position: absolute;
+    top: 72%;
+    left: 77%;
+    border: 3px solid #fff;
+}
+.BallStausPerfilAdd{
+    background: #fff;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    position: absolute;
+    top: 72%;
+    left: 77%;
+    border: 3px solid firebrick;
+
+    padding: 0;
+
+}
+.MorePhoto{
+    font-weight: bold;
+    font-size: 27px;
+    margin-top: 0;
+    position: absolute;
+    top:-68%;
+    left: 1%;
+    color: firebrick;
+    cursor: pointer;
+}
+#InputUploader{
+    display: none;
+}
+#Uploader{
+    width: 70px;
+    height: 60px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+
+
+}
+#UploadImage:hover  #Uploader{
+    transition: cubic-bezier(0.04, -0.21, 0.64, 1.01) .4s;
+    opacity: 1;
+}
+
+#BoxPerfil{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-size: cover;
+}
+#BoxPerfil img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-size: cover;
+}
+#BoxInfoPerfil{
+    padding: 0px;
+    overflow-y: auto;
+}
+#infoPerfilEdit{
+    padding-top: 50px;
+}
+#BoxCadastro{
+    padding: 0px;
+}
+
+.textb .InputName{
+    font-size:15px;
+    color: #333;
+    border: none;
+    width: 100%;
+    outline: none;
+    height: 50px;
+    background: none;
+    padding: 5px;
+    z-index: 2;
+    padding-left: 10px;
+
+}
+.InputSenha{
+    font-size:15px;
+    color: #333;
+    border: none;
+    width: 85%;
+    outline: none;
+    height: 50px;
+    background: none;
+    padding: 5px;
+    z-index: 2;
+    margin-top: 10px;
+    padding-left: 10px;
+    float: left;
+}
+#BtnViewHiddenLogin{
+    background: none;
+    border: none;
+    z-index: 2;
+    padding-top: 3.5px;
+    width: 15%;
+    float: right;
+    float: right;
+    outline: none;
+    margin-top:0;
+    border-bottom: 1px solid lightgrey;
+}
+
+#BtnViewHiddenLogin img{
+    width: 30px;
+    height: 30px;
+}
+.textb span::before{
+    content: attr(data-placeholder);
+    position: absolute;
+    top:50%;
+    left:10px;
+    color:#adadad;
+    transform: translateY(-50%);
+    z-index: 1;
+    transition: .5s;
+
+}
+
+#InputName,#InputIngredienteName, #InputValor, #NameIgr, #ValorIgr,#InputNameProduto,#InputValorProduto,#InputPontosProduto{
+    width: 100%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid lightgrey;
+    outline:none;
+    padding: 5px;
+}
+#InputName:hover, #InputIngredienteName:hover, #InputValor:hover, #NameIgr:hover, #ValorIgr:hover, #InputNameProduto:hover, #InputValorProduto:hover, #InputPontosProduto:hover{
+    transition: all .3s;
+    border-bottom: 1px solid #000;
+}
+#InputName:focus, #InputIngredienteName:focus, #InputValor:focus, #NameIgr:focus, #ValorIgr:focus, #InputNameProduto:focus, #InputValorProduto:focus, #InputPontosProduto:focus{
+    border-bottom: 1px solid #000;
+}
+
+#InputSenha, #InputSenhaCadastro{
+    width: 85%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid lightgrey;
+    outline:none;
+    padding: 5px;
+    float: left;
+    padding-left: 10px;
+}
+
+#InputSearch{
+    width: 65%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid lightgrey;
+    outline:none;
+    padding: 5px;
+    float: left;
+}
+.forcaSenhaBox{
+    width: 100px;
+    height: 4px;
+    margin-top: 8px;
+}
+.forSenhaText{
+    width: 80px;
+    float: right;
+}
+.forcaSenha{
+    width: 100px;
+    height: 4px;
+    float: right;
+    margin-top: 8px;
+}
+#InputSenha:hover, #InputSenhaCadastro:hover,#InputSearch:hover{
+    transition: all .3s;
+    border-bottom: 1px solid #000;
+}
+#InputSenha:focus, #InputSenhaCadastro:focus, #InputSearch:focus{
+    border-bottom: 1px solid #000;
+}
+#BtnViewHidden, #BtnViewHiddenCadastro, #BtnViewHiddenAdm{
+    width: 15%;
+    float: right;
+    padding: 2px;
+    background: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid lightgrey;
+    outline: none;
+}
+#BtnSearch{
+    width: 10%;
+    float: left;
+    padding: 2px;
+    background: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid lightgrey;
+    outline: none;
+    cursor: pointer;
+}
+#BtnSearch img{
+    width: 30px;
+    height: 30px;
+}
+#BtnViewHidden:hover, #BtnViewHiddenCadastro:hover, #BtnViewHiddenAdm:hover{ 
+    transition: all .3s;
+    border-bottom: 1px solid #000;
+}
+#BtnViewHidden:focus, #BtnViewHiddenCadastro:focus, BtnViewHiddenAdm:hover{
+    border-bottom: 1px solid #000;
+}
+#view{
+    width: 30px;
+    height: 30px;
+
+}
+#BoxSobre{
+    width: 100%;
+    position: relative;
+    min-height: 300px;
+}
+#BoxTextSobre{
+    padding: 10px;
+    padding-left: 40px;
+    padding-top: 20px;
+}
+#textAboutTitle{
+    font-size: 20pt;
+    font-family: 'Anton', sans-serif;
+
+}
+.textAbout{
+    font-size: 15pt;
+    font-family: 'Courgette', cursive;
+
+}
+
+#BoxInfos{
+    width: 100%;
+    position: relative;
+    min-height: 200px;
+}
+.MySvgTime{
+    width: 80px;
+    height: 80px;
+    transition: all .3s;
+    transform: scale(1);
+}
+.MySvgPrice{
+    width: 80px;
+    height: 80px;
+
+}
+
+.MySvgTime:hover .active-path, .MySvgPrice:hover .active-path{
+    fill:#ffa500;
+    transition: all .3s;
+}
+/*PArte das promoções e animações desta*/
+#BoxPromocoes{
+    margin: 0;
+    background: url('../img/burguer.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    min-height: 500px;
+    padding-left: 150px;
+    position: relative;
+}
+
+/* BOX PROMOÇÕES*/
+.MultiCarousel { 
+    float: left;
+    overflow: hidden; 
+    padding: 15px; 
+    width: 100%;
+    position:absolute;
+    height: 400px;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+.MultiCarousel .MultiCarousel-inner { 
+    transition: 1s ease all;
+    float: left;
+}
+.MultiCarousel .MultiCarousel-inner .item { 
+    float: left;
+}
+.MultiCarousel .MultiCarousel-inner .item > div { 
+    text-align: center; 
+    margin:10px;
+    background:rgba(0,0,0,.5);
+    color:#FFF;
+    height: 350px;
+}
+.MultiCarousel .leftLst, .MultiCarousel .rightLst { 
+    position:absolute;
+    border-radius:50%;
+    top:calc(50% - 20px); 
+}
+.MultiCarousel .leftLst { 
+    left:10px; 
+}
+.MultiCarousel .rightLst { 
+    right:10px; 
+}
+
+.MultiCarousel .leftLst.over, .MultiCarousel .rightLst.over { 
+
+    pointer-events: none; background:#ccc;
+}
+.ImgProView{
+    height: 200px;
+    position: relative;
+}
+.fundoPromo{
+    background: rgba(236,236,236,1);
+}
+.ImgProView img{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    width: 160px;
+    height: 150px;
+    border-radius: 5px;
+}
+.InforProView{
+    height: 150px;
+
+}
+.InforProView .TittlePro{
+    font-size: 15px;
+    color:#FFF;
+    font-family: Verdana;
+    word-break: break-word;
+}
+.InforProView .ProValor{
+    font-size: 18px;
+    color:lightgreen;
+    font-family: Verdana;
+}
+.InforProView .IngreText{
+    color: lightgray;
+    font-family: cursive ,monospace;
+    font-size: 15px;
+}
+/*---------------Parte do administrador------------------*/
+#BoxInicialAdmin{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 0;
+    min-height: 70px;
+
+}
+#MinBoxManager{
+    margin: 0 auto;
+    min-height: 400px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+}
+#MinBoxManagerTable{
+    box-shadow: 2px 2px 2px 2px lightgray;
+    margin: 0 auto;
+    overflow-x: auto;
+}
+#ManagerBoxItens{
+    position: relative;
+    padding: 10px;
+}
+#BoxItenImg{
+    height: 80%;
+    background: lightgray;
+    padding: 0;
+    margin: 0;
+}
+#ItenImg{
+    width: 200px;
+    height: 200px;
+    margin: 30px;
+    margin-left: 50%;
+    margin-top: 10%;
+    transform: translate(-50%);
+
+}
+#BoxItenInfo{
+    background: white;
+}
+#ItensBox{
+    width: 80%;
+    min-height: 90%;
+    border-radius: none;
+    border:1px solid lightgray;
+    cursor: pointer;
+    transition: all .3s;
+    margin-left: 50%;
+    margin-top: 10%;
+    transform: translate(-50%);
+    z-index: -1;
+    background: white;
+}
+#ItensBox:hover{
+    transition: all .3s;
+    box-shadow: 0px 0px 10px #ced4da;
+}
+#ItensBox a{
+    font-weight: bold;
+    font-size: 20pt;
+    text-decoration: none;
+    color: black;
+}
+#ItenInfo{
+    font-weight: bold;
+    font-size: 20pt;
+
+}
+.Mybtns{
+    width: 90%;
+
+}
+/*-------------------------------------------------------*/
+/*Animação do icones de tempo e preços*/
+.anime{
+    opacity: 0;
+    transform: translate3d(-100px, 0, 0);
+    transition: .3s;
+}
+
+.anime-start{
+    opacity: 1;
+    transform: translate3d(0,0,0);
+    transition: .3s;
+}
+/*--------------------------------------*/
+.hrefIndex{
+    text-decoration: none;
+    color: green;
+}
+.hrefIndex:hover{
+    color: white;
+}
+/*SAIR*/
+
+#Sair{
+    background: none;
+    border:none;
+    color:white;
+    outline: none;
+    cursor: pointer;
+    font-size: 15pt;
+}
+#Sair:hover{
+    text-decoration: white underline;
+}
+
+/*PARTE DE BUSCAS DE FOTO*/
+.perfilViewAdmin{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: relative;
+}
+.perfilViewAdmin img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.perfilViewAdmin div{
+    position: absolute;
+    top:73%;
+    left: 72%;
+    width: 14px;
+    height: 14px;
+    background: lightgreen;
+    border-radius: 50%;
+    border:2px solid #fff;
+}
+/*-----------------------*/
+.icons{
+    width: 20px;
+    height: 20px;
+}
+
+/*--- AREA SEARCH ------------*/
+#SearchAll{
+    width: 35px;
+    height: 35px;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+#SearchAll img{
+    width: 100%;
+    height: 100%;
+}
+#AddUser{
+    width: 35px;
+    height: 35px;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+#AddUser img{
+    width: 100%;
+    height: 100%;
+}
+#BoxBtnCollapse{
+    position: relative;
+    height: 40px;
+    width: 100%;
+}
+#LabelCollapse p{
+    color: rgb(51, 103, 204);
+}
+
+#BtnCollapseLocalization{
+    display: none;
+}
+#InputEstado, #InputCidade{
+    width: 100%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid rgb(51, 103, 204);
+    outline:none;
+    padding: 5px;
+}
+#InputBairro, #InputNumero{
+    width: 100%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid lightgray;
+    outline:none;
+    padding: 5px;
+}
+#InputBairro:focus, #InputNumero:focus,
+#InputBairro:hover, #InputNumero:hover{
+    transition: all .3s;
+    border-bottom: 1px solid rgb(51, 103, 204);
+}
+#BoxManagerPedidos{
+    min-height: 100vh;
+    background: rgb(248,249,250);
+
+}
+#BoxMinPedidos, #BoxMinAddPedidos, #BoxMinProdutos, #BoxMinAddTipo{
+    min-height: 300px;
+    background: #fff; 
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 0px 0px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    max-height: 600px;
+    overflow-y: auto;
+}
+.TextPedidos, .TextProdutos{
+    font-size: 14pt;
+    font-family: Arial;
+    color: rgb(71,72,75);
+}
+#MoreInform{
+    border-top: none;
+}
+#BtnDel{
+    width: 80px;
+    height: 30px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    background: none;
+    outline: none;
+}
+#BtnDel img{
+    width: 30px;
+    height: 25px;
+    margin-bottom: 2px;
+}
+a{
+    cursor: pointer;
+}
+#BtnDel2{
+    width: 25px;
+    height: 30px;
+    padding-left:1px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    background: none;
+    outline: none;
+}
+#BtnDel2 img{
+    width: 20px;
+    height: 20px;
+    margin-bottom: 2px;
+}
+#BtnMoreInform{
+    position: relative;
+}
+.CheckMoreClass{
+    display: none;
+}
+#BtnMoreInform label{
+    width: 40px;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left:90%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+.SeeMoreClass{
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 7px;
+    width: 25px;
+    height: 2px;
+    background-color: #000;
+    transition: all .3s ease-in-out;
+}
+.SeeMoreClass:after{
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 2px;
+    bottom: -10px;
+    background-color: #000;
+    transition: all .3s ease-in-out;
+    transform: rotate(0deg);
+}
+.CheckMoreClass:checked ~ label .SeeMoreClass{
+    transform: rotate(45deg);
+    top:15px;
+}
+
+.CheckMoreClass:checked ~ label .SeeMoreClass:after{
+    transform: rotate(-90deg);
+    top:0px;
+}
+#InputPedido{
+    background: none;
+    width: 100%;
+    border-top:none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #000;
+    outline: none;
+    padding-left: 10px;
+    color: #23272b;
+}
+
+
+.Add{
+    background: none;
+    border: none;
+    width: 30px;
+    height: 30px;
+    outline: none;
+    cursor: pointer;
+    border-radius: 50%;
+
+}
+.Add img{
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    outline: none;
+
+}
+/*------------------------------PRODUTOS */
+#Filter{
+    display: none;
+}
+#BoxProdutos label{
+    cursor: pointer;
+}
+.FilterClass{
+    width: 25px;
+    height: 2px;
+    position: absolute;
+    top:15px;
+    background-color: #000;
+    transition: all .3s ease-in-out;
+}
+.FilterClass:before{
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 2px;
+    bottom: -8px;
+    background-color: #000;
+    transition: all .3s ease-in-out;
+}
+.FilterClass:after{
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 2px;
+    bottom: 8px;
+    background-color: #000;
+}
+#Filter:checked ~ label .FilterClass{
+    top:15px;
+    width: 15px;
+}
+#Filter:checked ~ label .FilterClass:before{
+    width: 10px;
+}
+#Filter:checked ~ label .FilterClass:after{
+    width: 25px;
+}
+.FilterA{
+    text-decoration: none;
+    outline: none;
+    color: black;
+}
+.FilterA:hover{
+    text-decoration: none;
+    outline: none;
+    color: darkgrey;
+}
+#FilterBox{
+    width: 100%;
+}
+#FilterNameUnderBox{
+    background: rgb(248,249,250);
+    width: 90%;
+    border-radius: 5px;
+    padding: 2px;
+    padding-left: 10px;
+}
+.imgProduto{
+    width: 80px;
+    height: 70px;
+    border-radius:5px;
+}
+.imgEditProduto{
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+.imgDelete{
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.BtnCadastraIngrediente{
+    background: none;
+    border: 2px solid #4d6954 ;
+    padding: 5px;
+    color: #4d6954;
+    border-radius: 5px;
+    width: 100%;
+    outline: none;
+}
+.BtnCadastraIngredienteAfter{
+    transition: all .5s;
+    border: 2px solid #28a745;
+    color: #fff;
+    background: #28a745;
+    padding: 5px;
+    border-radius: 5px;
+    width: 100%;
+    outline: none;
+}
+.BtnCadastraIngredienteAfter:hover{
+    background: #105f22;
+}
+.buscaIn{
+    background: url(../img/icons/search_preto.png) no-repeat center right;
+    padding: 5px;
+    border:none;
+    border-bottom: 2px solid transparent;
+    width: 33px;
+    outline: none;
+    transition: all .4s linear;
+    -webkit-transition: all .4s linear;
+    font-size: 15px;
+    font-family: arial;
+    color: transparent;
+    cursor: pointer;
+}
+
+.buscaIn:focus{
+    width: 90%;
+    border-bottom: 2px solid #ddd;
+    background-color: #fff;
+    transition: all .4s linear;
+    -webkit-transition: all .4s linear;
+    color: #000;
+}
+.buscaIn:focus::-webkit-input-placeholder{
+    transition: all 1s;
+    color: lightgray;
+}
+.buscaIn::-webkit-input-placeholder{
+    color:transparent;
+    background-color: none;
+    font-style: bold;
+}
+#SelectTipo{
+    width: 100%;
+    color: black;
+    font-size: 15px;
+    outline: none;
+    height: 35px;
+    cursor: pointer;
+    padding: 5px;
+}
+#BoxImgProduto{   
+    height: 90px;
+}
+#BoxUploadImgPro{
+    height: 100%;
+    position: relative;
+}
+#BoxUploadImgPromocao{
+    height: 100%;
+    position: relative;
+}
+
+#BoxUploadImgPromocao .imgDefautPromocaoEdit{
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    cursor: pointer;
+}
+#BoxUploadImgPromocao div{
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    top: 94%;
+    left:60%;
+    transform: translate(-50%,-50%);
+    cursor: pointer;
+    border: 1px solid #000;
+    background-color: rgba(255,254,254);
+    border-radius: 50%;
+}
+#InputUploadImgPromoEdit{
+    display:none;
+}
+#BoxUploadImgPromocao div .imgPhotoPromocao{
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    cursor: pointer;
+}
+#BoxUploadImgPro .imgDefautProduto{
+    height: 80px;
+    width: 80px;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    cursor: pointer;
+}
+#BoxUploadImgPro .imgDefautPromocao{
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    cursor: pointer;
+
+}
+.imgPromocaoCenter{
+    left: 50%;
+}
+#InputUploadImgPro{
+    display: none;
+}
+#BoxUploadImgPro div{
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    top: 86%;
+    left:70%;
+    transform: translate(-50%,-50%);
+    cursor: pointer;
+    border: 1px solid #000;
+    background-color: rgba(255,254,254);
+    border-radius: 50%;
+}
+#BoxUploadImgPro div .imgPhoto{
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    cursor: pointer;
+}
+#BoxIng{
+    background: rgb(248,249,250);
+    border-radius: 5px;
+}
+.allIgr{
+    color: gray;
+    font-family: cursive ,monospace;
+    font-size: 15px;
+    word-break: break-word;
+}
+.BtnDelVarios{
+    color: firebrick;
+    font-size: 17px;
+    font-family: Arial;
+    padding: 5px;
+    border: 1px solid firebrick;
+    background: none;
+    border-radius: 3px;
+    outline: none;
+
+}
+.BtnDelVarios:hover{
+    transition: linear .3s;
+    background: firebrick;
+    color:white;
+}
+.TextTittleEdit{
+    font-size: 30px;
+    color: black;
+
+}
+#BoxImgEditProduto{   
+    height: 150px;
+}
+#BoxUploadImgEditPro{
+    height: 100%;
+    position: relative;
+    width: 200px;
+}
+#BoxUploadImgEditPro .EditProdutoImg{
+    height: 110px;
+    width: 110px;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+#InputUploadImgPro{
+    display: none;
+}
+#BoxUploadImgEditPro div{
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    top: 86%;
+    left:75%;
+    transform: translate(-50%,-50%);
+    cursor: pointer;
+    border: 1px solid #000;
+    background-color: rgba(255,254,254);
+    border-radius: 50%;
+}
+#BoxUploadImgEditPro div .imgPhoto{
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    cursor: pointer;
+}
+
+#BoxEdit{
+    min-height: 100vh;
+}
+#BtnCancel{
+    background: none;
+    border: 2px solid firebrick;
+    border-radius: 3px;
+    width: 90%;
+    height: 35px;
+    color: firebrick;
+    outline: none;
+}
+#BtnCancel:hover{
+    background: firebrick;
+    color: white;
+    transition: linear .3s;
+}
+#BtnSave{
+    background: none;
+    border: 2px solid #00cc33;
+    border-radius: 3px;
+    width: 90%;
+    height: 35px;
+    color: #00cc33;
+    outline: none;
+}
+#BtnSave:hover{
+    background: #00cc33;
+    color: white;
+    transition: linear .3s;
+}
+#textShow{
+    color: #666666;
+    font-size: 20px;
+}
+.bgMy{
+    background: firebrick;
+}
+/*PARTE PROMOCAO*/
+#BoxManagerPromocoes{
+    min-height: calc(100vh - 80px);
+    background: rgba(236,236,236,1)
+}
+#pro{
+    border-radius: 5px;
+    background: rgba(255,255,254,.5);
+    border:2px solid rgba(255,255,254,.5);
+
+}
+
+#pro:hover{
+    border:2px solid #adadad;
+}
+#proDefaut{
+    border-radius: 5px;
+    background: #b9bbbe;
+    border:2px solid rgba(255,255,254,.5);
+}
+#proDefaut:hover{
+
+    background: #b9bbbe;
+    border:2px solid firebrick;
+}
+.BxAddPromocao{
+    position: relative;
+    height: 200px;
+}
+.BxAddPromocao a{
+    text-decoration: none;
+    color: white;
+}
+.AddPromocao{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    background: #4f545c;
+    cursor: pointer;
+    transition: all .4s;
+}
+
+.AddPromocao:after{
+    content: '+';
+    position: absolute;
+    top:47%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 40px;
+    font-weight: bold;
+
+}
+.AddPromocao:hover{
+    transition: all .4s;
+    top:45%;
+    box-shadow: 0px 6px 5px rgba(0,0,0,.2);
+}
+.BoxTextAddPromocao{
+    height: 150px;
+}
+.BoxTextAddPromocao .TittlePro{
+    font-size: 20px;
+    color:#FFF;
+    font-family: Verdana;
+}
+.BoxTextAddPromocao .ProValor{
+    font-size: 18px;
+    color:lightgreen;
+    font-family: Verdana;
+}
+.BoxTextAddPromocao .IngreText{
+    color: lightgray;
+    font-family: cursive ,monospace;
+    font-size: 15px;
+}
+.BxAddProduto{
+    max-height: 500px;
+    position: relative;
+    overflow-y: auto;
+}
+.InforProViewAdm{
+    height: 100%;
+}
+.TittleProAdm{
+    font-size: 20px;
+    color:#FFF;
+    font-family: Verdana;
+    font-weight: bold;
+}
+.ProValorAdm{
+    font-size: 20px;
+    color:lightgreen;
+    font-family: Verdana;
+}
+.IngreTextAdm{
+    color: lightgray;
+    font-family: cursive ,monospace;
+    font-size: 15px;
+}
+#proAdm{
+    border-radius: 5px;
+    background: rgba(255,255,254,.5);
+    border:2px solid rgba(255,255,254,.5);
+    height: 200px;
+}
+#proAdm:hover{
+    border:2px solid #adadad;
+
+}
+.MCAdm{
+    min-height: 250px;
+    max-height: 450px;
+}
+.QtdPro{
+    width: 40px;
+    height: 30px;
+    border-radius: 7px;
+    outline: none;
+}
+.CmpCheck{
+    position:absolute;
+    top:95%;
+    left:75%;
+    transform: translate(-50%, -50%);
+    width: 90px;
+    height: 30px;
+}
+.BxGetProSelected{
+    min-height: 30px;
+    transition: linear .4s;
+}
+.Bxedit{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top:70%;
+    left: 10%;
+
+}
+.Bxedit img{
+    width: 30px;
+    height: 30px;
+
+}
+
+.Bxexpro{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top:70%;
+    left: 80%;
+
+}
+.Bxexpro img{
+    width: 30px;
+    height: 30px;
+
+}
+.BoxHistorico{
+    width: 100%;
+    min-height: calc(100vh - 70px);
+}
+.BxItenHistorico{
+
+}
+.itensHistorico{
+    height: 160px;
+    width: 100%;
+}
+.showInformHistorico{
+
+    border-radius: 3px;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.1);
+    padding: 10px;
+
+}
+.bxImgHistorico img{
+    width: 60px;
+    height: 60px;
+}
+.textInformHistorico{
+    font-weight: 600;
+    font-size: 16px;
+    color:#333;
+}
+.textMensage{
+    color: #666666;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 10px;
+}
+.InformHistorico{
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 1;
+}
+.bxGraphic{
+    min-height: 200px;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.1);
+    border-radius: 3px;
+}
+.btnAtualiza{
+    width: 100px;
+    height:40px;
+    color: white;
+    text-align:center;
+    border:none;
+    border-radius: 3px;
+    background:firebrick;
+    outline:none;
+}
+.btnConfirmPedido{
+    background: firebrick;
+    outline: none;
+    border: firebrick;
+    color: white;
+    text-align: center;
+    vertical-align: central;
+    padding: 10px;
+    border-radius: 4px;
+}
+.inptEditPedido{
+    width: 100%;
+    color: black;
+}
+.bxShowItens{
+    border-radius: 5px;
+    border:1px solid lightgray;
+    min-height: 50px;
+    color: #5e656d;
+}
+.bxShowItens div p{
+    vertical-align: central;
+    margin-top: 10px;
+}
+.btnDelItenPedido{
+    width: 30px;
+    height: 40px;
+    outline: none;
+    background: none;
+    border: none;
+    float: right;
+    margin-top: 5px;
+    font-weight: 400;
+}
+.BxCozinha{
+    width: 100%;
+    overflw-x: hidden;
+    min-height: calc(100vh - 70px);
+    background: #f1f1f1;
+}
+.inBxCozinha{
+    margin-top: 100px;
+}
+#footer{
+    min-height: 300px;
+    padding: 10px;
+    position: relative;
+}
+.bxComent{
+    height: 250px;
+    width: 100%;
+    border-radius: 3px;
+    background-color: #f1f1f1;
+}
+.bxImgComent{
+    width: 100%;
+    height: 80px;
+    position: relative;
+}
+.bxTextComent{
+    width: 100%;
+    height: 170px;
+}
+.bxImgComent img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.bxTextComent p{
+    padding-top: 20px;
+    font-size: 13px;
+    color: #666666;
+    word-break: break-word;
+    text-align: center;
+}
+.nameComent{
+    font-weight: bold;
+}
+.BoxaddComent{
+    height: 80px;
+    position: relative;
+}
+.bxButtonAdd{
+    width: 180px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.bxButtonAdd button{
+    padding: 10px;
+    background: firebrick;
+    color: white;
+    border-radius: 3px;
+    border: 1px solid #904545;
+    outline: none;
+    width: 180px;
+}
+.textCopyright{
+        font-size: 16px;
+    line-height: 26px;
+    color: #455b81;
+}
+.tipoName{
+    width: 100%;
+    
+}
+#btn-np{
+	width:40px;
+	height:40px;
+	padding: 0px;
+}
+@media(max-width: 576px){
+
+    #TextTittle{
+        font-size: 25pt;
+        /*border: 1px solid #000;*/
+    }
+    #TextTittle2{
+        font-size: 22pt;
+        /*border: 1px solid #000;*/
+    }
+    #Logo{
+        margin: 0 auto;
+        width:50%;
+        height: 50%;
+
+        /*border: 1px solid #000;*/
+    }
+    #BoxLogo{
+        /*border: 1px solid #000*/
+        padding-top: 100px;
+        max-width: 250px;
+        transition: all .4s;
+
+    }
+    #BoxTittleLogo{
+        /* border: 1px solid #000;*/
+        padding: 0;
+        z-index: -999;
+    }
+    #abrindoNav ul li a{
+        font-family: 'Arial';
+        font-size: 14pt;
+    }
+    #InfoNameLanche{
+        position: absolute;
+        top: 90%;
+        left: 30%;
+        margin-left: 2px;
+        transform: translate(-50%,-50%);
+    }
+    .text-lanche{
+        color: white;
+        font-size: 12pt;
+        font-weight: bold;
+
+    }
+    #MoreIn{
+        top:50%;
+    }  
+    #abrindoNav ul li a{
+        color:white;
+    }
+    #img-logo{
+        margin-left: 0px;
+    }
+    #Uploader{
+        display:none
+    }
+    #BoxSobre{
+        width: 100%;
+        position: relative;
+        min-height: auto;
+    }
+
+    #BoxPromocoes{
+
+        padding-left: 50px;
+    }
+    #ItenInfo{
+        font-weight: bold;
+        font-size: 15pt;
+
+    }
+    .TextTittleEdit{
+        transition: linear .3s;
+        font-size: 20px;
+    }
+    .BoxNewMenu ul{
+        position: fixed;
+        top:0;
+        left:0;
+        margin: 0;
+        box-sizing: border-box;
+        width: 100%;
+        height: 100vh;
+        background: #000;
+        transition: .5s;
+        z-index: 100000;
+        overflow-y: auto;
+    }
+}
+/*reponsividade do celular*/
+@media(min-width: 576px){
+    #BoxSobre{
+        width: 100%;
+        position: relative;
+        min-height: auto;
+    }
+    #abrindoNav ul li a{
+        color:white;
+        font-size: 14pt;
+    }
+    #TextTittle{
+        font-size: 30pt;
+        /*border: 1px solid #000;*/
+    }
+    #TextTittle2{
+        font-size: 25pt;
+    }
+    #ItenInfo{
+        font-weight: bold;
+        font-size: 15pt;
+
+    }
+
+}
+
+
+/*responsividade para tablets*/
+@media(min-width: 768px){
+    #BoxNotification{
+        position: absolute;
+        height: 35px;
+        width: 40px;
+        float: right;
+        padding: 3px;
+        top: 32px;
+        left: 79%;
+        transform: translate(-50%,-50%);
+
+    }
+    #abrindoNav ul li a{
+        font-family: 'Arial';
+        font-size: 13pt;
+        color:rgba(255,255,240,.6);
+    }
+    #img-logo{
+        margin-left: 50px;
+    }
+    #TextTittle{
+        font-family: 'Luckiest Guy', cursive;
+        font-size: 40pt;
+        color: yellow;
+    }
+    #TextTittle2{
+        font-size: 30pt;
+        font-family: 'Luckiest Guy', cursive;
+        color: yellow;
+    }
+    #img-logo{
+        margin-left: 35px;
+    }
+    #BoxImageSobre{
+        padding: 20px;
+        position: relative;
+        min-height: 200px;
+
+    }
+    #ImgAlign1{
+        position: absolute;
+        top: 46%;
+        left: 40%;
+        transform: translate(-50%, -50%);
+        width: 200px;
+        height: 150px;
+        box-shadow: 10px 3px 10px rgba(0,0,0,.5);
+        background: url('../img/humburguer.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    #ImgAlign2{
+        position: absolute;
+        top: 68%;
+        left: 58%;
+        transform: translate(-50%, -50%);
+        width: 150px;
+        height: 100px;
+        box-shadow: 3px 3px 5px rgba(0,0,0,.3);
+        background: url('../img/humburguer2.jpg');
+        z-index: -999;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+    }
+    .BoxNewMenu .BxNone{
+        background: rgba(0,0,0,.5);
+        width: calc(100vw - 300px);
+        height: 100vh;
+        z-index: 99999;
+        position: fixed;
+        left:300px;
+        top:0;
+        transition: .5s;
+    }
+
+
+}
+
+@media(max-width: 768px){
+
+
+}
+
+
+/*para desktops menores*/
+@media(min-width: 992px){
+    #abrindoNav ul li a{
+        font-family: 'Arial';
+        font-size: 14pt;
+    }
+    #Lanche:hover{
+        top: 47%;
+        transition: all .2s;
+        box-shadow: 0px 4px 3px 1px rgb(0,0,0,0.4);
+        transition-timing-function: linear;
+    }
+    #BoxCarrinho{
+        left: 90%;
+    }
+    #BoxNotification{
+        left: 85%;
+    }
+    #img-logo{
+        margin-left: 100px;
+    }
+
+
+}
+
+
+/*desktops maiores*/
+@media(min-width:1200px){
+
+}

@@ -1,0 +1,883 @@
+@font-face{
+    font-family: 'PT Sans';
+    src:url('../fonts/PT_Sans/PT_Sans-Web-Regular.ttf');    
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+
+}
+::-webkit-scrollbar{
+    width: 8px;
+    background-color: white;
+}
+::-webkit-scrollbar-thumb{
+    background-color: lightblue;
+    box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+}
+#BoxGetProdutos{
+    min-height:100vh;
+    margin-top: 67px;
+    width: 100%;
+    background: #ebebeb;
+    overflow-x: hidden;
+}
+.BxDadosCarrinho::-webkit-scrollbar { width:5px; background:firebrick; } /* configurando scroll */
+.BxDadosCarrinho::-webkit-scrollbar-track { background: white; }
+.BxDadosCarrinho::-webkit-scrollbar-thumb { border-radius:0px; background:#8b8778;  }
+.BxDadosCarrinho:before{
+    content: "";
+    top: -15px;
+    right: 50px;
+    position: absolute;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid #FFF;
+    overflow-y: auto;
+}
+
+.acessCart{
+    color:#2d2d2d;
+}
+.acessCart:hover{
+    color:#666667;
+    text-decoration: underline #000;
+}
+.BtnCompra{
+    width: 90%;
+    height: 30px;
+    color: white;
+    font-size: 15px;
+    background: none;
+    border: 1px solid #fff;
+    position: absolute;
+    bottom: 2%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.BtnCompra:hover{
+    background: #FFF;
+    color: #000;
+}
+
+#clickCart{
+    display: none;
+}
+#clickNotification{
+    display: none;
+}
+.BxDadosCarrinho{
+    width: 350px;
+    position: fixed;
+    transition: linear .5s;
+    min-height: 100px;
+    top: 12%;
+    right: 2%;
+    background: white;
+    display: none;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    box-shadow: 0px 0px 2px 0px rgba(0,0,0,.3);
+    max-height: 500px;
+    overflow-y: auto;
+}
+.BxDadosNotification{
+    width: 300px;
+    position: fixed;
+    transition: linear .5s;
+    min-height: 100px;
+    top: 12%;
+    right: 12%;
+    background: white;
+    display: none;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    box-shadow: 0px 0px 2px 0px rgba(0,0,0,.3);
+    max-height: 500px;
+    overflow-y: auto;
+}
+#bxDadosNotification div img{
+    width: 35px;
+    height: 35px;
+    vertical-align: central;
+    margin-top: 10px;
+}
+
+
+.bxpd{
+    min-height: 90px;
+}
+.pdVazio{
+    width: 100px;
+    height: 80px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.textPdVz{
+    color: gray;
+    font-size: 15px;
+    font-family: 'Pt Sans';
+    text-align: center;
+}
+#BxMenuLat{
+    width: 300px;
+    min-height: 100vh;
+    float: left;
+}
+#BxProdutoPg{
+    width: 100vw;
+    float: right;
+    max-height: 500px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+.carousel{
+    width: 100%;
+    overflow-x: hidden;
+
+}
+#BoxAllProdutos{
+
+}
+.BxCardPro{
+    height: 400px;
+    width: 224px;
+    position: relative;
+}
+.inBxCardPro{
+    height: 314px;
+    width: 80%;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    background: #FFF;
+    border-radius: 3px;
+    border: 2px solid #FFF;
+    transition: height .1s ease-out;
+}
+.inBxCardPro:hover{
+    box-shadow: 0 7px 16px 0 rgba(0,0,0,.2), 0 1px 3px 0 rgba(0,0,0,.1);
+    transition: height .1s ease-out;
+    height: 360px;
+}
+.inBxCardPro:hover .textIngrediente{
+    opacity: 1;
+}
+.inBxCardPro:hover .maisComprados{
+    opacity: 1;
+}
+.textProGet{
+    color: #333;
+    margin-top: 30px;
+    margin-left: 40px;
+    font-weight: bold;
+    font-size: 26px;
+}
+.bxImgVenda{
+    width: 100%;
+    height: 150px;
+}
+.bxImgVenda img{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 150px;
+	
+
+}
+.imgPromocao{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 170px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+.bxImgVenda .imgPro{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+.imgPro2{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+.textIngrediente{
+    opacity: 0;
+    font-size: 12px;
+}
+.textValorPro{
+    color: #333;
+    font-size: 19px;
+    line-height: 1.2;
+    margin-top: 10px;
+}
+.namePro{
+    font-size: 17px;
+    font-weight: bold;
+    word-break: break-word;
+}
+.BxBtnCompra{
+    position: absolute;
+    top: 10%;
+    left: 75%;
+    width: 45px;
+    height: 45px;
+    background: #e2e2e2;
+    border-radius: 50%;
+
+}
+.BxBtnCompra button{
+    width: 100%;
+    height: 100%;
+    background: none;
+    border:none;
+    outline: none;
+}
+.BxBtnCompra button img{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 35px;
+    height: 35px;
+}
+.BxFilter{
+    height: 60px;
+    margin-top: 20px;
+}
+
+
+
+.searchbar{
+    margin-bottom: auto;
+    margin-top: auto;
+    height: 50px;
+    background-color: #FFF;
+    border-radius: 30px;
+    width: 100%;
+}
+
+.search_input{
+    color: #666667;
+    border: 0;
+    outline: 0;
+    background: none;
+    width: 80%;
+    line-height: 50px;
+    transition: width 0.4s linear;
+    padding: 0 20px;
+}
+
+
+
+.searchbar:hover > .search_icon{
+    background: firebrick;
+    color: #FFF;
+    text-decoration: none;
+}
+.searchbar:focus ~.search_icon{
+    background: firebrick;
+    color: #FFF;
+    text-decoration: none;
+}
+.search_icon{
+    height: 40px;
+    width: 50px;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    color:white;
+    position: absolute;
+    top: 8px;
+    right: 24px;
+    text-decoration: none;
+}
+.BxFiltered{
+    background: #FFF;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    min-height: 180px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+}
+.BxFilterLanche div img{
+    width: 180px;
+    height: 160px;
+}
+.textNameFiltered{
+    font-size: 20px;
+    color: #666667;
+    line-height: 1;
+}
+.textValueFiltered{
+    color: #333;
+    font-size: 24px;
+    line-height: 1.2;
+    vertical-align: middle;
+}
+.imgAddPro{
+    position: absolute;
+    top: 80%;
+    left: 90%;
+}
+.imgAddPro button{
+    background: none;
+    border: none;
+    outline: none;
+}
+.imgAddPro .imgAddToCard{
+    width: 40px;
+    height: 40px;
+}
+.textResult{
+    font-size: 30px;
+    color: #666667;
+    margin-left: 35px;
+}
+.textNoExist{
+    font-size: 30px;
+    color: #8b8778;
+    vertical-align: center;
+    text-align: center;
+    margin-top: 20px;
+}
+.textFilter{
+    font-size: 20px;
+    color: #333;
+    vertical-align: middle;
+    margin-left: 10px;
+    text-align: center;
+
+
+}
+.inBxFilter{
+    padding: 10px;
+}
+.linkFilter{
+    outline: none;
+    text-decoration: none;
+
+}
+.linkFilter:hover{
+    outline: none;
+    text-decoration: none;
+
+}
+.linkFilter:focus > .inBxFilter{
+    transition: ease-out 1s linear;
+    background: lightgray;
+
+}
+.linkFilter:hover > .textFilter{
+    color: #FFF;
+}
+.linkCarac{
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: .007px;
+    text-transform: uppercase;
+    margin-top: 14px;
+}
+.linkF{
+    color: #606060;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    margin-top: 7px;
+    outline: none;
+    text-decoration: none;
+}
+.linkF:hover{
+    color:#000 ;
+    text-decoration: none;
+}
+.AllAfterFiltered{
+}
+.maisComprados{
+    color: #39b54a;
+    font-size: 14px;
+    vertical-align: 3px;
+    padding-left: 13px;
+    height: 10px;
+
+    opacity: 0;
+}
+#BxCartFinally{
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 130px;
+    padding-left: 70px;
+    padding-right: 70px;
+    border-radius: 3px;
+
+    background: white;
+    margin: 0 auto;
+    min-height:0px;
+    width: 80vw;
+    box-shadow: 0 3px 6px 0 rgba(0,0,0,.2), 0 1px 3px 0 rgba(0,0,0,.1);
+
+
+}
+
+.borderCart{
+    width: 240px;
+    position: absolute;
+    top: 120%;
+    left: 0;
+    height: 2px;
+    background: black;
+}
+.textCart{
+    font-weight: 800px;
+    font-size: 20px;
+    margin-left: 30px;
+}
+.imgCartFinally{
+    width: 170px;
+    height: 120px;
+    border-radius: 5px;
+    position: absolute; 
+    top:30%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.NameProFinally{
+    display: -webkit-box;
+    line-height: 1;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    color: #333;
+    font-size: 20px;
+    font-weight: 600;
+    padding-right: 0;
+    margin-bottom: 0;
+    line-height: 1.25;
+    margin-top: 15px;
+}
+.AddSubBx{
+    width: 100px;
+    height: 50px;
+    padding: 10px;
+    float: right;
+
+}
+.AddSubBx .btnMenos,
+.AddSubBx .btnMais{
+    width: 30px;
+    float: left;
+    background: none;
+    height: 50px;
+    font-size: 30px;
+    line-height: 0.5;
+}
+.AddSubBx .btnMenos{
+    border-right: none;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    outline: none;
+    border-top:1px solid #ccc;
+    border-left:1px solid #ccc;
+    border-bottom:1px solid #ccc;
+}
+.AddSubBx .inptAddSub{
+    width: 40px;
+    height: 50px;
+    border-right: none;
+    border-left: none;
+    border-top:1px solid #ccc;
+    border-bottom:1px solid #ccc;
+    float: left;
+    outline: none;
+    text-align: center;
+    font-size: 19px;
+    background: none;
+}
+.AddSubBx .btnMais{
+    border-left: none;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    outline: none;
+    border-top:1px solid #ccc;
+    border-right:1px solid #ccc;
+    border-bottom:1px solid #ccc;
+}
+.BxCarrinhoHeight{
+    height: 60px;
+
+}
+.textQtdProFinally{
+    text-align: right;
+    color: #333;
+    font-size: 20px;
+    line-height: 0.5;
+    font-weight: 400;
+}
+.textLocationFinally{
+    text-align: right;
+    color:#3483fa;
+    font-size: 20px;
+    font-weight: 400;
+}
+.textTotalProFinally{
+    text-align: right;
+    color:#333;
+    font-size: 24px;
+    line-height: 0.5;
+    font-weight: 500;
+}
+.textValorFinally{
+    font-weight: 400px;
+    color:#333;
+    font-size: 30px;
+    line-height: 0.5;
+}
+.textValorFinally2{
+    font-weight: 400px;
+    font-size: 17px;
+    color:#333;
+    font-size: 20px;
+    line-height: 0.5;
+    float: right;
+}
+.textDelProFinally{
+    text-align: right;
+    color:#3483fa;
+    font-size: 15px;
+    line-height: 0.5;
+    font-weight: 400;
+}
+.BtnFinally{
+    width: 300px;
+    height: 50px;
+    color: white;
+    background: firebrick;
+    border: none;
+    border-radius: 5px;
+    font-size: 17px;
+}
+.BtnFinally:hover{
+    width: 300px;
+    height: 50px;
+    color: white;
+    transition: all .4s;
+
+    background: #d63535;
+    border: none;
+    border-radius: 5px;
+    font-size: 17px;
+}
+.bxBtnFinally{
+    position: absolute;
+    top: 50%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+}
+#location{
+    border-radius: none;
+}
+.bxSaveLocation{
+    min-height: 100px;
+}
+#SaveLocation{
+    width: 90%;
+    position: absolute;
+    top: 87%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 50px;
+    background: #3483fa;
+    border: none;
+    color: white;
+}
+.alertError p{
+    color: red;
+    font-size: 15px;
+    font-weight: 400px;
+    display: none;
+}
+.imgCarrinhoVazio{
+    width: 180px;
+    height: 150px;
+
+}
+.textCarrinhoVazio{
+    color: gray;
+    font-size: 22px;
+    font-family: 'Pt Sans';
+    text-align: center;
+}
+.btnMoreCompra{
+    width: 300px;
+    height: 50px;
+    color: white;
+    background: firebrick;
+    border: none;
+    border-radius: 5px;
+    font-size: 17px;
+}
+#loader{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px;
+    height: 100px;
+
+}
+.MyLoad{
+    color: firebrick;
+}
+#bgDark{
+    width: 100%;
+    height: 100vh;
+    background: rgba(0,0,0,.5);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+.bxPontosMore{
+    position: absolute;
+    top: 10px;
+    left: 80%;
+    z-index: 999;
+    width: 30px;
+    height: 30px;
+    background: white;
+    border-radius: 50%;
+
+}
+.bxPontosMore p, .bxPontosMoreFilter p{
+    font-weight: 600;
+    color: firebrick;
+    text-align: center;
+    font-size: 15px;
+}
+.bxPontosMoreFilter{
+    position: absolute;
+    top: 10px;
+    left: 90%;
+    z-index: 999;
+}
+.textValorPontos{
+    font-weight: 600;
+    font-size: 14px;
+    color: firebrick;
+}
+.textPontos{
+    font-size: 14px;
+    font-weight: 400;
+    
+}
+.bxPontosMore2{
+    
+}
+.bxPontosMore2 p{
+    color: firebrick;
+    font-weight: 500;
+    font-size: 13px
+}
+.msgCartao{
+    
+}
+.msgCartao p{
+    color: gray;
+    font-size: 12px;
+}
+@media(max-width: 576px){
+    #BoxCarrinho:before{
+        right: 40px;
+    }
+    .inBxCardPro{
+        width: 80%;
+    }
+    .bxBtnFinally{
+        position: absolute;
+        width: 390px;
+        top: 50%;
+        left: 60%;
+        transform: translate(-50%, -50%);
+    }
+}
+@media(max-width: 992px){
+    #BxMenuLat{
+        position: absolute;
+        width: 300px;
+        min-height: 100vh;
+        left: -300px;
+        transition: all .4s;
+
+    }
+    #BxProdutoPg{
+        width: 100vw;
+
+    }
+    .imgCartFinally{
+        max-width: 100%;
+        height: 100px;
+        transition: all .1s;
+        margin-top: 40px;
+
+    }
+    .textQtdProFinally{
+        text-align: left;
+        font-size: 16px;
+    }
+    .textValorFinally{
+        font-size: 20px;
+    }
+    .textLocationFinally{
+        font-size: 15px;
+        text-align: left;
+    }
+    .textTotalProFinally{
+        text-align: left;
+        color:#333;
+        font-size: 18px;
+    }
+    .textValorFinally{
+        text-align: left;
+        color:#333;
+        font-size: 18px;
+    }
+    .textProGet{
+        color: #333;
+        margin-top: 15px;
+        margin-left: 10px;
+        font-weight: bold;
+        font-size: 20px;
+    }
+	.bxImgVenda img{
+		width: 150px;
+		height: 100px;
+
+	}
+	
+}
+@media(max-width: 776px){
+    .inBxCardPro{
+        width: 95%;
+    }
+    .imgCartFinally{
+            max-width: 100%;
+        height: 100px;
+        transition: all .1s;
+        margin-top: 40px;
+    }
+    #BxCartFinally{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .textCart{
+        font-size: 20px;
+    }
+    .imgCartFinally{
+           max-width: 100%;
+    }
+    .fl-right{
+        text-align: right;
+    }
+    .BxFilterLanche div img{
+        width: 100px;
+        height: 90px;
+    }
+	.bxImgVenda img{
+		width: 150px;
+		height: 100px;
+
+	}
+
+}
+@media(max-width: 556px){
+    .textLocationFinally{
+
+    }
+}
+@media(max-width: 1024px){
+
+    .imgCartFinally{
+        margin-top: 40px;
+            max-width: 100%;
+        height: 100px;
+        transition: all .1s;
+        left: 50%;
+    }
+    .AddSubBx .btnMenos,
+    .AddSubBx .btnMais{
+        width: 20px;
+        float: left;
+        background: none;
+        height: 30px;
+        font-size: 20px;
+        line-height: 0.5;
+    }
+    .AddSubBx .inptAddSub{
+        width: 30px;
+        height: 30px;
+        border-right: none;
+        border-left: none;
+        border-top:1px solid #ccc;
+        border-bottom:1px solid #ccc;
+        float: left;
+        outline: none;
+        text-align: center;
+        font-size: 19px;
+        background: none;
+    }
+    .bxImgVenda img{
+
+        height: 100px;
+
+    }
+	.bxImgVenda img{
+		width: 150px;
+		
+
+	}
+}
+@media(min-width:1024px){
+    .bxBtnFinally{
+        position: absolute;
+        top: 50%;
+        left: 80%;
+        transform: translate(-50%, -50%);
+    }
+	.bxImgVenda{
+		width: 100%;
+		height: 150px;
+	}
+	.bxImgVenda img{
+		position: absolute;
+		top:50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		height: 150px;
+		width: 150px;
+		height: 100px;
+
+	}
+}
